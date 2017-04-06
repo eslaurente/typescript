@@ -85,3 +85,28 @@ var Helpers = (function () {
 Helpers.PI = 3.14;
 console.log("The number pi: " + Helpers.PI);
 console.log("The circumference of a cirlce with a diameter of 8 units is: " + Helpers.calcCircumference(8));
+/** ABSTRACT CLASSES */
+var Project = (function () {
+    function Project() {
+        this.projectName = 'NONE';
+        this.budget = 0;
+    }
+    Project.prototype.calcBudget = function () {
+        return this.budget * 2;
+    };
+    return Project;
+}());
+var ITProject = (function (_super) {
+    __extends(ITProject, _super);
+    function ITProject() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ITProject.prototype.changeName = function (name) {
+        this.projectName = name;
+    };
+    return ITProject;
+}(Project));
+var newProject = new ITProject();
+newProject.changeName('Web Application');
+newProject.budget = 1000;
+console.log("The new project: " + newProject.projectName + " | budget: " + newProject.calcBudget());

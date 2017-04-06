@@ -77,3 +77,26 @@ class Helpers {
 console.log(`The number pi: ${Helpers.PI}`);
 console.log(`The circumference of a cirlce with a diameter of 8 units is: ${Helpers.calcCircumference(8)}`);
 
+/** ABSTRACT CLASSES */
+abstract class Project {
+    projectName: string = 'NONE';
+    budget: number = 0;
+
+    abstract changeName(name: string): void;
+
+    calcBudget(): number {
+        return this.budget * 2;
+    }
+}
+
+class ITProject extends Project {
+    changeName(name: string): void {
+        this.projectName = name;
+    }
+}
+
+const newProject = new ITProject();
+newProject.changeName('Web Application');
+newProject.budget = 1000;
+console.log(`The new project: ${newProject.projectName} | budget: ${newProject.calcBudget()}`);
+
