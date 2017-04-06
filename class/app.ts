@@ -100,3 +100,20 @@ newProject.changeName('Web Application');
 newProject.budget = 1000;
 console.log(`The new project: ${newProject.projectName} | budget: ${newProject.calcBudget()}`);
 
+/** PRIVATE CONSTRUCTORS */
+class OnlyOne {
+    private static instance: OnlyOne;
+    private constructor(public name: string) {}
+
+    static getInstance() {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('Singleton: The ONE and only instance');
+        }
+        return OnlyOne.instance;
+    }
+}
+
+// const errorInstance = new OnlyOne(); // error
+const singletonIntance = OnlyOne.getInstance();
+console.log(singletonIntance);
+

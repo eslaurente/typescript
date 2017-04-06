@@ -110,3 +110,19 @@ var newProject = new ITProject();
 newProject.changeName('Web Application');
 newProject.budget = 1000;
 console.log("The new project: " + newProject.projectName + " | budget: " + newProject.calcBudget());
+/** PRIVATE CONSTRUCTORS */
+var OnlyOne = (function () {
+    function OnlyOne(name) {
+        this.name = name;
+    }
+    OnlyOne.getInstance = function () {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne('Singleton: The ONE and only instance');
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+// const errorInstance = new OnlyOne(); // error
+var singletonIntance = OnlyOne.getInstance();
+console.log(singletonIntance);
