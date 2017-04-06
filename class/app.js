@@ -126,3 +126,4 @@ var OnlyOne = (function () {
 // const errorInstance = new OnlyOne(); // error
 var singletonIntance = OnlyOne.getInstance();
 console.log(singletonIntance);
+// singletonIntance.name = 'CANNOT SET A READ-ONLY PROPERTY'; // error TS2540: Cannot assign to 'name' because it is a constant or a read-only property. 

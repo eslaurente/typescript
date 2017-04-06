@@ -103,7 +103,11 @@ console.log(`The new project: ${newProject.projectName} | budget: ${newProject.c
 /** PRIVATE CONSTRUCTORS */
 class OnlyOne {
     private static instance: OnlyOne;
-    private constructor(public name: string) {}
+    public readonly name: string;    // READ-ONLY PROPERTY
+
+    private constructor(name: string) {
+        this.name = name;
+    }
 
     static getInstance() {
         if (!OnlyOne.instance) {
@@ -117,3 +121,4 @@ class OnlyOne {
 const singletonIntance = OnlyOne.getInstance();
 console.log(singletonIntance);
 
+// singletonIntance.name = 'CANNOT SET A READ-ONLY PROPERTY'; // error TS2540: Cannot assign to 'name' because it is a constant or a read-only property.
