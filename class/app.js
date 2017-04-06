@@ -73,3 +73,15 @@ var plant = new Plant();
 console.log(plant.species);
 plant.species = 'Asparagus';
 console.log(plant.species);
+/** STATIC PROPERTIES & METHODS */
+var Helpers = (function () {
+    function Helpers() {
+    }
+    Helpers.calcCircumference = function (diameter) {
+        return this.PI * diameter;
+    };
+    return Helpers;
+}());
+Helpers.PI = 3.14;
+console.log("The number pi: " + Helpers.PI);
+console.log("The circumference of a cirlce with a diameter of 8 units is: " + Helpers.calcCircumference(8));

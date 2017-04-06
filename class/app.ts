@@ -44,7 +44,7 @@ console.log(`Name: ${emerald.name} | User Name: ${emerald.userName} | Age: ${eme
 
 /** SETTERS & GETTERS */
 class Plant {
-    private speciesDefault = 'DEFAULT';
+    private speciesDefault: string = 'DEFAULT';
     private _species: string = this.speciesDefault;
 
     set species(val: string) {
@@ -65,3 +65,15 @@ const plant = new Plant();
 console.log(plant.species);
 plant.species = 'Asparagus';
 console.log(plant.species);
+
+/** STATIC PROPERTIES & METHODS */
+class Helpers {
+    static PI: number = 3.14;
+
+    static calcCircumference(diameter: number): number {
+        return this.PI * diameter;
+    }
+}
+console.log(`The number pi: ${Helpers.PI}`);
+console.log(`The circumference of a cirlce with a diameter of 8 units is: ${Helpers.calcCircumference(8)}`);
+
