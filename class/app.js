@@ -46,3 +46,30 @@ var Emerald = (function (_super) {
 }(Person));
 var emerald = new Emerald();
 console.log("Name: " + emerald.name + " | User Name: " + emerald.userName + " | Age: " + emerald.getAge() + " | Type: " + emerald.getType());
+/** SETTERS & GETTERS */
+var Plant = (function () {
+    function Plant() {
+        this.speciesDefault = 'DEFAULT';
+        this._species = this.speciesDefault;
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        set: function (val) {
+            if (val.length > 3) {
+                this._species = val;
+            }
+            else {
+                this._species = this.speciesDefault;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+var plant = new Plant();
+console.log(plant.species);
+plant.species = 'Asparagus';
+console.log(plant.species);

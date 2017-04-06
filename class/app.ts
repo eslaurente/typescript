@@ -42,3 +42,26 @@ class Emerald extends Person {
 const emerald = new Emerald();
 console.log(`Name: ${emerald.name} | User Name: ${emerald.userName} | Age: ${emerald.getAge()} | Type: ${emerald.getType()}`);
 
+/** SETTERS & GETTERS */
+class Plant {
+    private speciesDefault = 'DEFAULT';
+    private _species: string = this.speciesDefault;
+
+    set species(val: string) {
+        if (val.length > 3) {
+            this._species = val;
+        }
+        else {
+            this._species = this.speciesDefault;
+        }
+    }
+
+    get species() {
+        return this._species;
+    }
+}
+
+const plant = new Plant();
+console.log(plant.species);
+plant.species = 'Asparagus';
+console.log(plant.species);
