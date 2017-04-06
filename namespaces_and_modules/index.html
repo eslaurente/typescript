@@ -4,8 +4,21 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Learning TypeScript</title>
+        <script src="../node_modules/systemjs/dist/system.js"></script>
+        
     </head>
     <body>
-        <script src="./app.js"></script>
+        <script>
+            SystemJS.config({
+                baseURL: '/namespaces_and_modules',
+                packages: {
+                    '/': {
+                        defaultExtension: 'js'
+                    }
+                }
+            });
+
+            SystemJS.import('app.js')
+        </script>
     </body>
 </html>

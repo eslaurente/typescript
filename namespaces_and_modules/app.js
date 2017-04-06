@@ -1,23 +1,20 @@
-var MyMath;
-(function (MyMath) {
-    var PI = 3.14;
-    function calcCircumference(diameter) {
-        return PI * diameter;
-    }
-    MyMath.calcCircumference = calcCircumference;
-})(MyMath || (MyMath = {}));
-var MyMath;
-(function (MyMath) {
-    function calcRectangleArea(width, height) {
-        return width * height;
-    }
-    MyMath.calcRectangleArea = calcRectangleArea;
-})(MyMath || (MyMath = {}));
-/// <reference path="circleMath.ts" />
-/// <reference path="rectangleMath.ts" />
-var MM = MyMath;
-console.log("Circumference of d=80 circle: " + MM.calcCircumference(80));
-console.log("Area of rectangle w=3, h=17: " + MM.calcRectangleArea(3, 17));
-// outer namespace
-var PI = 3.00;
-console.log(PI);
+System.register(["./math/circle", "./math/rectangle.js"], function (exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var CircleMath, RectangleMath;
+    return {
+        setters: [
+            function (CircleMath_1) {
+                CircleMath = CircleMath_1;
+            },
+            function (RectangleMath_1) {
+                RectangleMath = RectangleMath_1;
+            }
+        ],
+        execute: function () {
+            console.log(CircleMath.PI);
+            console.log(CircleMath.calcCircumference(34));
+            console.log(RectangleMath.calcRectangle(43, 23));
+        }
+    };
+});
