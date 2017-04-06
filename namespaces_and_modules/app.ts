@@ -1,3 +1,6 @@
+/// <reference path="circleMath.ts" />
+/// <reference path="rectangleMath.ts" />
+
 console.log(`Circumference of d=80 circle: ${MyMath.calcCircumference(80)}`);
 console.log(`Area of rectangle w=3, h=17: ${MyMath.calcRectangleArea(3, 17)}`);
 
