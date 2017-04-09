@@ -3,4 +3,5 @@ interface IPerson {
     getLastName(): string;
     getFullName(): string;
     getAge(): number;
+    greet(): string;
 }
