@@ -1,3 +1,5 @@
+import { IPerson } from "./IPerson";
+
 export class Student implements IPerson {
 
     constructor(private _firstName: string = '',
