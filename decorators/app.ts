@@ -18,3 +18,20 @@ function logging(value: boolean): any {
 class Car {
     constructor(readonly name = 'CAR') {}
 }
+
+
+/** ADVANCED  */
+function printable(constructorFn: Function) {
+    constructorFn.prototype.print = function() {
+        console.log('PRINT method from: ', this);
+    }
+}
+
+@printable
+class Plant {
+    name = 'GREEN PLANT';
+}
+const plant = new Plant();
+if ((plant as any).print instanceof Function) {
+    (plant as any).print();
+}
