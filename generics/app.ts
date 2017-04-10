@@ -34,3 +34,15 @@ printAll<String>(['34', '79', '97', '99']);
 /** GENERIC FUNCTION TYPES */
 const genericFuncType: <T>(data: T) => T = betterEcho;
 console.log(genericFuncType('Generic Function Type to lowercase').toLowerCase());
+
+
+/** GENERIC CLASS */
+class SimpleMath<T> {
+    constructor(public baseValue: T, public multiplier: T) {}
+    calculate(): number {
+        return Number(this.baseValue) * Number(this.multiplier);
+    }
+}
+// const simpleMath = new SimpleMath('10', '20'); // ERROR
+const simpleMath = new SimpleMath(10, 20);
+console.log(simpleMath.calculate());
