@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "target": "es5",
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "strictNullChecks": true
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
