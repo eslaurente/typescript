@@ -42,11 +42,11 @@ if ((plant as any).print instanceof Function) {
 //         if (name === void 0) { name = 'PERSON'; }
 //         this.name = name;
 //     }
-// app.js:9 function Car(name) {
+// function Car(name) {
 //         if (name === void 0) { name = 'CAR'; }
 //         this.name = name;
 //     }
-// app.js:9 function Plant() {
+// function Plant() {
 //         this.name = 'GREEN PLANT';
 //     }
-// app.js:38 PRINT method from:  Plant {name: "GREEN PLANT"}
+// PRINT method from:  Plant {name: "GREEN PLANT"}
