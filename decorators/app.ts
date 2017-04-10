@@ -53,19 +53,39 @@ if ((plant as any).print instanceof Function) {
 
 
 /** METHOD DECORATOR */
-function editable(value: boolean): any {
+function methodEditable(value: boolean): any {
     return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
         descriptor.writable = value;
     }
 }
 
-class Project {
-    constructor(public projectName: string) {}
+/** PROPERTY DECORATOR */
+function propertyEditable(value: boolean): any {
+    return function(target: any, propName: string) {
+        const newDescriptor: PropertyDescriptor = {
+            writable: value
+        };
+        return newDescriptor;
+    }
+}
 
-    @editable(false)
+class Project {
+    @propertyEditable(false)
+    public projectName: string
+
+    constructor(name: string) {
+        this.projectName = name;
+    }
+
+    @methodEditable(false)
     calcBudget() { console.log(1000); }
 }
 const project = new Project('Super Project');
 project.calcBudget();
 project.calcBudget = () => console.log(2000);
 project.calcBudget();
+console.log(project);
+
+
+
+
