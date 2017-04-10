@@ -37,12 +37,16 @@ console.log(genericFuncType('Generic Function Type to lowercase').toLowerCase())
 
 
 /** GENERIC CLASS */
-class SimpleMath<T> {
+class SimpleMath<T extends number | string> {
     constructor(public baseValue: T, public multiplier: T) {}
     calculate(): number {
         return Number(this.baseValue) * Number(this.multiplier);
     }
 }
 // const simpleMath = new SimpleMath('10', '20'); // ERROR
-const simpleMath = new SimpleMath(10, 20);
+// const simpleMath = new SimpleMath<number | string | boolean>(10, 20); // ERROR: boolean not allowed
+const simpleMath = new SimpleMath<number | string>(10, 20);
+console.log(simpleMath.calculate());
+simpleMath.baseValue = '1024';
+simpleMath.multiplier = '16';
 console.log(simpleMath.calculate());
