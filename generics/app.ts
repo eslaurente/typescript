@@ -29,3 +29,8 @@ function printAll<T>(args: T[]): void {
 // printAll('NOT AN ARRAY'); // ERROR
 // printAll<Array<String>([34, 79, 97, 99]) // ERROR
 printAll<String>(['34', '79', '97', '99']);
+
+
+/** GENERIC FUNCTION TYPES */
+const genericFuncType: <T>(data: T) => T = betterEcho;
+console.log(genericFuncType('Generic Function Type to lowercase').toLowerCase());
