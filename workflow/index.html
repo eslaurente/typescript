@@ -4,27 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Learning TypeScript</title>
-        <script src="../node_modules/systemjs/dist/system.js"></script>
-        
     </head>
-    <body>
+    <body
         <div id="app">
-            <h2><strong>TypeScript Workflows</strong></h2>
+            <h2><strong>Webpack Workflow</strong></h2>
         </div>
-        <script>
-            SystemJS.config({
-                baseURL: '/workflow',
-                map: {
-                    'jQuery': '../node_modules/jquery/dist/jquery.min.js'
-                },
-                packages: {
-                    '/': {
-                        defaultExtension: 'js'
-                    }
-                }
-            });
-
-            SystemJS.import('app.js')
-        </script>
+        <script src="bundle.js"></script>
     </body>
 </html>

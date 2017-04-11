@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "lite-server",
-    "build": "gulp",
+    "build": "webpack -d --watch",
+    "build:prod": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -17,6 +18,8 @@
   "devDependencies": {
     "@types/jquery": "^2.0.41",
     "gulp": "^3.9.1",
-    "gulp-typescript": "^3.1.6"
+    "gulp-typescript": "^3.1.6",
+    "ts-loader": "^2.0.3",
+    "webpack": "^2.3.3"
   }
 }
